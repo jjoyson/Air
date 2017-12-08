@@ -1,0 +1,414 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Booking</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .logo img {
+            height:100px;
+            float:left;
+            margin-top: -20px;
+        }
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            color: #FFF;
+            padding: 0.6% 0;
+            border:0;
+        }
+        .navbar-brand {
+            float:left;
+            min-height: 60px;
+            padding: 0 10px 5px;
+        }
+        .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover {
+            color:#FFF;
+        }
+        .navbar-inverse .navbar-nav li a {
+            color: #D5D5D5;
+        }
+        .navbar li a:hover {
+        color:aqua !important;
+        border-bottom: 0.3px solid #e67e22;
+        transition: all 500ms ease-in-out;
+        }
+        .carousel-caption {
+            top:57%;
+            transform: translateY(-50%);
+            text-transform: uppercase;
+        }
+        .btn{
+            font-size: 18px;
+            color:#FFF;
+            background-color: black;
+            border: 2px solid #FFF;
+        }
+        .align {
+            margin-top: 15%;
+            margin-left: -80%;
+        }
+        .align1 {
+            margin-left:80%;
+            margin-top: -5%;
+        }
+        .container {
+            margin: 2% auto;
+        }
+        footer{
+            width: 100%;
+            background-color:black;
+            padding:0.3%;
+            color:#FFF;
+        }
+        .fa {
+            padding: 20px;
+            font-size: 20px;
+            margin-top: -14%;
+        }
+        .fa:hover {
+            text-decoration: none;
+        }
+        @media (max-width: 900px) {
+            .fa{
+                font-size: 20px;
+                padding: 14px;
+                margin-top: -24%;
+            }
+        }
+
+        .login1{
+            position:absolute;
+            top: calc(50% - 150px);
+            left: calc(50% - 50px);
+            height:150px
+            width:350px;
+            margin-left:-50%;
+            padding:10px;
+        }
+        .login1 input[type=text] {
+            width:150px;
+            height:30px;
+            background:transparent;
+            border:1px solid rgba(255,255,255,0.6);
+            border-radius:2px;
+            color:aqua;
+            font-size:16px;
+            font-weight:400;
+            padding:4px;
+        }
+        .login1 input[type=password] {
+            width:150px;
+            height:30px;
+            background:transparent;
+            border:1px solid rgba(255,255,255,0.6);
+            border-radius:2px;
+            color:aqua;
+            font-size:16px;
+            font-weight:400;
+            padding:4px;
+        }
+        .login1 input[type=date] {
+            width:137px;
+            height:30px;
+            background:transparent;
+            border:1px solid rgba(255,255,255,0.6);
+            border-radius:2px;
+            color:aqua;
+            font-size:16px;
+            font-weight:400;
+            padding:4px;
+        }
+        .login1 input[type=button]{
+            width:150px;
+            height:30px;
+            background:transparent;
+            border:1px solid #fff;
+            cursor: pointer;
+            border-radius:2px;
+            color:aqua;
+            font-family: 'Exo', sans-serif;
+            font-size:16px;
+            font-weight:400;
+            padding:6px;
+            margin-top: -5px;
+            margin-left:0%;
+        }
+        .login1 input [type=button]:hover{
+            opactiy:0.8;
+        }
+        .login1 input [type=button]:active{
+            opactiy:0.6;
+        }
+        .login1 input [type=text]:focus{
+            outline:none;
+            border:1px solid rgba(255,255,255,0.9);
+        }
+        .login1 input[type=password]:focus{
+            outline:none;
+            border:1px solid rgba(255, 255, 255, 0.9);
+        }
+        .login1 input[type=button]:focus{
+            outline:none;
+        }
+        ::-webkit-input-placeholder{
+            color: rgba(255,255,255,0.6);
+        }
+        ::-moz-input-placeholder{
+            color: rgba(255,255,255,0.6);
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="logo">
+                    <a class="navbar-brand" href="#"><img src="ai.png"></a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://127.0.0.1:8080/admin">Admin</a></li>
+                    <li><a href="i.html">Logout</a></li>
+                    <li><a href="http://127.0.0.1:8080/update" method="GET">Update Information</a></li>
+                    <li><a href="http://127.0.0.1:8080/manage" method="GET">Manage Booking</a></li>
+                    <li><a href="https://www.skyscanner.com/hotels?na=1&sd=2017-11-28&ed=2017-11-29">Cheap Hotels</a></li>
+                    <li><a href="https://www.skyscanner.com/car-rental/?pick_up_date=2017-11-28">Car Rental</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Roundtrip</a></li>
+  <li><a data-toggle="tab" href="#menu1">One Way</a></li>
+  <li><a data-toggle="tab" href="#menu2">Multi-city</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="canada-lake-feb.jpg" width="1500" >
+                <div class="carousel-caption">
+                    <form action="http://127.0.0.1:8080/booking" method="POST">
+                        <div class="login1">
+                                <input type="text" placeholder="From : Departure" name="iata">
+                                <input type="date" placeholder="Departure Date" name="ddate">
+                                <input type="text" placeholder="To : Arrival" name="diata">
+                                <input type="date" placeholder="Return Date" name="adate">
+                                <select id="mySelect"  class="btn btn-default dropdown-toggle" name = "conn" value = "Limit of Connections" >
+                                    <option value="Limit of Connections">Limit of Connections</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                  </select>
+                               <!-- <input id=" noc" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" value="No. of Connections" name="con" ><span class="caret"></span>
+                                <ul class="dropdown-menu" id="dropdown" style="margin-left:635; margin-top:-35;">
+                                  <li><a href="#">1</a></li>
+                                  <li><a href="#">2</a></li>
+                                  <li><a href="#">3</a></li>
+                                  <li><a href="#">4</a></li>
+                                  <li><a href="#">5</a></li>
+                                  <li><a href="#">6</a></li>
+                                  <li><a href="#">7</a></li>
+                                </ul>-->
+                                <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+                                <script language="javascript">
+                                    $(".dropdown-menu li a").click(function(){
+                                    $(this).parents(".login1").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+                                    $(this).parents(".login1").find('.btn').val($(this).data('value'));
+                                });
+                                </script>
+                                <input type="text" placeholder="Time Limit (hours)" value="Time Limit (hours)" name="dur">
+                                <input type="text" placeholder="Preferred Price" value="Preferred Price" name="dep">
+                                <select id="mySelect"  class="btn btn-default dropdown-toggle" name = "price" value = "Class" >
+                                        <option value="Class">Class</option>
+                                        <option value="Economy">Economy</option>
+                                        <option value="First">First</option>
+                                </select>
+                                <select id="mySelect"  class="btn btn-default dropdown-toggle" name="order" value = "Order by" >
+                                        <option value="Order by">Order by</option>
+                                        <option value="Price">Price</option>
+                                        <option value="Flight Length">Flight Length</option>
+                                      </select>
+                                <br><br><br><br><br><br><br><br><br><br>
+                                <div class="align1">
+                                    <input  class="btn btn-default" type="submit" value="Search Round Trip Flights" name="check"/>
+                                </div>
+                        </div>
+                    </form>
+                    <div class="align">
+                    <a href="https://www.google.com/maps"><button type="button" class="btn btn-default">Map</button></a>
+                    </div>
+                </div>
+            </div>  <!---End Active -->
+        </div>
+    </div>
+  </div>
+  <div id="menu1" class="tab-pane fade">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="canada-lake-feb.jpg" width="1500" >
+                <div class="carousel-caption">
+                    <form action="http://127.0.0.1:8080/booking" method="POST">
+                        <div class="login1">
+                                <input type="text" placeholder="From : Departure" name="iata">
+                                <input type="date" placeholder="Departure Date" name="ddate">
+                                <input type="text" placeholder="To : Arrival" name="diata">
+                                <select id="mySelect"  class="btn btn-default dropdown-toggle" name = "conn" value = "Limit of Connections" >
+                                        <option value="Limit of Connections">Limit of Connections</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                </select>
+
+                                <!--<input id=" noc" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" value="No. of Connections" name="con" ><span class="caret"></span>
+                                <ul class="dropdown-menu" id="dropdown" style="margin-left:635; margin-top:-35;">
+                                  <li><a href="#">1</a></li>
+                                  <li><a href="#">2</a></li>
+                                  <li><a href="#">3</a></li>
+                                  <li><a href="#">4</a></li>
+                                  <li><a href="#">5</a></li>
+                                  <li><a href="#">6</a></li>
+                                  <li><a href="#">7</a></li>
+                                </ul>-->
+                                <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+                                <script language="javascript">
+                                    $(".dropdown-menu li a").click(function(){
+                                    $(this).parents(".login1").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+                                    $(this).parents(".login1").find('.btn').val($(this).data('value'));
+                                });
+                                </script>
+                                <input type="text" placeholder="Time Limit (hours)" value="Time Limit (hours)" name="dur">
+                                <input type="text" placeholder="Preferred Price" value="Preferred Price" name="dep">
+                                <select id="mySelect"  class="btn btn-default dropdown-toggle" name = "price" value = "Class" >
+                                        <option value="Class">Class</option>
+                                        <option value="Economy">Economy</option>
+                                        <option value="First">First</option>
+                                </select>
+                                <select id="mySelect"  class="btn btn-default dropdown-toggle" name="order" value = "Order by" >
+                                        <option value="Order by">Order by</option>
+                                        <option value="Price">Price</option>
+                                        <option value="Flight Length">Flight Length</option>
+                                      </select>
+                                      <br><br><br><br><br><br><br><br><br><br>
+                                    <div class="align1">
+                                        <input  class="btn btn-default" type="submit" value="Search 1 way Flights" name="check"/>
+                                    </div>
+                        </div>
+                    </form>
+                    <div class="align">
+                    <a href="https://www.google.com/maps"><button type="button" class="btn btn-default">Map</button></a>
+                    </div>
+                </div>
+            </div>  <!---End Active -->
+        </div>
+    </div>
+  </div>
+  <div id="menu2" class="tab-pane fade">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="canada-lake-feb.jpg" width="1500" >
+                <div class="carousel-caption">
+                    <form name="login1">
+                        <div class="login1">
+                            <ul style="margin-left:250">
+                                <input type="text" placeholder="From : Departure" name="credit">
+                                <input type="text" placeholder="To : Connection" name="badd"><br>
+                                <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+                                <input id="btnAdd1" type="button" onclick="check(this.form)" style="margin-top:100" value="Add"/>
+                            </ul>
+                        </div>
+                    </form>
+                    <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+                    <script language="javascript">
+                        $(document).ready(function() {
+                            $('#btnAdd1').on('click', function() {
+                                var input_item = ' <input type="text" placeholder="From : Departure" name="credit"><input type="text" placeholder="To : Connection" name="badd"><input type="date" placeholder="Departure Date" name="dep"><input type="text" placeholder="Seat Class" name="st"><input type="text" placeholder="Seat" name="seat"><input type="text" placeholder="Preferred Duration" name="dur"><input type="text" placeholder="Preferred Price" name="dep"><br>';
+                                $('ul').append(input_item);
+                            });
+                        });
+                    </script>
+                    <div class="align">
+                    <a href="https://www.google.com/maps"><button type="button" class="btn btn-default">Map</button></a>
+                    </div>
+                    <div class="align1">
+                    <a href="login.html"><button type="button" class="btn btn-default" href="login.html">Search Flights</button></a>
+                    </div>
+                </div>
+            </div>  <!---End Active -->
+        </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!--<div class="container text-center">
+        <div class="row">
+            <div class="col-sm-8 col-md-6 col-lg-12">
+                <li class="dropdown">
+                    <button id="options" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" style="margin-left:1000" >Chose option<span class="caret"></span></button>
+                        <ul class="dropdown-menu" style="margin-left: 1000">
+                            <li><a href="#" >Price</a></li>
+                            <li><a href="#">Length of Flight</a></li>
+                        </ul>
+                </li>
+                <script>
+                    $(document).ready(function(){
+                        $(".dropdown-menu li a").click(function(){
+                        $("#options").text($(this).text());
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>-->
+
+    <footer class="container-fluid text-center">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Contact Us</h3>
+                <h5>3241 S Wabash Ave, Chicago, IL 60616</h5>
+            </div>
+            <div class="col-sm-4">
+                <h3>Connect</h3>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+            </div>
+            <div class="col-sm-4">
+                <h3>Developers</h3>
+                <h5>Saikiran Yerraguntla | Jithin Joyson | Tanwir Lalani</h5>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
